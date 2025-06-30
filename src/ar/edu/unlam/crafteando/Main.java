@@ -59,10 +59,12 @@ public class Main {
 		ObjetoBasico hierro = new ObjetoBasico("Hierro");
 		espada.agregar(baston);
 		espada.agregar(hierro);
+		espada.agregar(hierro);
 		espada.agregar(cuerdaReforzada);
 		
+
 		
-		Map<ObjetoComponente, Integer> elementosDeEspada = espada.obtener();
+//		Map<ObjetoComponente, Integer> elementosDeEspada = espada.obtener();
 		
 //		for (Map.Entry<ObjetoComponente, Integer> ingrediente : elementosDeEspada.entrySet()) {
 //		    System.out.println("Ingrediente: " + ingrediente.getKey().getNombre());
@@ -107,6 +109,14 @@ public class Main {
 //		madera.mostrarConstruccion(false);
 		
 //		espada.descomponerEnBasicos();
+		
+		System.out.println("\n=== DESCOMPOSICION EN BASICOS ===");
+//		Map<ObjetoBasico, Integer> resultado = espada.descomponerEnBasicos();
+		Map<ObjetoBasico, Integer> resultado = madera.descomponerEnBasicos();
+		for (Map.Entry<ObjetoBasico, Integer> entry : resultado.entrySet()) {
+		    System.out.println("- " + entry.getKey().getNombre() + ": " + entry.getValue());
+		}
+		
 		
 	}
 //    public static void main(String[] args) {

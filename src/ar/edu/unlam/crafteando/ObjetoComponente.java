@@ -28,8 +28,9 @@ public abstract class ObjetoComponente {
     public abstract Map<ObjetoComponente, Integer> obtener();
     public abstract int calcularTiempo(Map<ObjetoCompuesto, Receta> recetas);
     public abstract Map<ObjetoBasico, Integer> descomponerEnBasicos();
+    
     public abstract boolean estaVacio();
-
+    protected abstract void mostrarConstruccionInterno(int cantidad, int nivel, boolean soloPrimerNivel, String prefijo, boolean esUltimo);
     public final void mostrarConstruccion(boolean soloPrimerNivel) {
         System.out.println("Objeto: " + this.getNombre());
 
@@ -45,6 +46,4 @@ public abstract class ObjetoComponente {
             entry.getKey().mostrarConstruccionInterno(entry.getValue(), 1, soloPrimerNivel, "", ultimo);
         }
     }
-
-    protected abstract void mostrarConstruccionInterno(int cantidad, int nivel, boolean soloPrimerNivel, String prefijo, boolean esUltimo);
 }
